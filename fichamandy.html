@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="fichamandy.css" />
+
+    <title>Mahlu Cour</title>
+  </head>
+  <body>
+    <ul class="nav">
+      <li><a class="nava" href="index.html">Início</a></li>
+      <li style="float:right" class="active"><a class="nava" href="fichamandy.html">Ficha</a></li>
+      <li><a class="nava" href="contact.asp">Mesa</a></li>
+      <li><a href="codice.html">Códice</a>
+        <ul class="subnav">
+          <li><a href=status.html>Status</a></li>
+          <li><a href="npc">Npc's</a> </li>
+          <li><a href="mecanicas.html">Mecânicas</a></li>
+          <li><a href="bestiario">Bestiário</a></li>
+          <li><a href="elemental.html">elemental mistake</a></li>
+      </ul></li>
+      <li><a class="nava" href="about.asp">Mapa</a></li>
+      <li><a class="nava" href="about.asp">Lojas</a></li>
+      <li><a class="nava" href="about.asp">Jornal</a></li>
+    </ul>
+    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <h1 class="title">Mahlu Cour</h1>
+
+<!--modal de vida-->
+    <div id="lifeModal" class="modal with-input">
+      <div class="modal-content">
+        <h2>MODIFICAR VIDA</h2>
+        <hr />
+        <form class="formModal" id="changeLife">
+          <h3>Atual</h3>
+          <input type="number" name="current" id="lifeCurrent" min="0" />
+          <h3>Máximo</h3>
+          <input type="number" name="max" id="lifeMax" min="0" />
+          <input type="submit" value="Salvar" />
+        </form>
+      </div>
+    </div>
+<!--modal de mana-->
+    <div id="sanityModal" class="modal with-input">
+      <div class="modal-content">
+        <h2>MODIFICAR MANA</h2>
+        <hr />
+        <form class="formModal" id="changeSanity">
+          <h3>Atual</h3>
+          <input
+            type="number"
+            name="sanityCurrent"
+            id="sanityCurrent"
+            min="0"
+          />
+          <h3>Máximo</h3>
+          <input type="number" name="sanityMax" id="sanityMax" min="0" />
+          <input type="submit" value="Salvar" />
+        </form>
+      </div>
+    </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="details border">
+        <h2 class="grid-title">DETALHES PESSOAIS</h2>
+        <hr />
+
+        <div class="inputs">
+          <h4>Crystal coin</h4>
+          <input type="text" name="cristal" id="cristal" value="" />
+          <h4>Estrelas</h4>
+          <input type="text" name="star" id="star" value="" />
+          <h4>Classe</h4>
+          <input type="text" name="classe" id="classe" value="" />
+          <h4>Nível</h4>
+          <input type="text" name="level" id="level" value="" />
+          <h4>Idade</h4>
+          <input type="text" name="age" id="age" value="" />
+          <h4>Sexo</h4>
+          <select id="sex" name="sex">
+            <option value="male">Caça F-35</option>
+            <option value="female">Feminino</option>
+            <option value="other">Outros</option>
+          </select>
+          <br>
+          <h2>Alma</h2>
+          <br>
+          <h3>Cor da alma: roxa</h3>
+          <h4>Habilidade</h4>
+          <br>
+          <br>
+          <div>
+            <img src="imagens/soul1.png" class="imgsoul">
+          <h2>Soul resonance</h2>
+          <br>
+          <h4>Passiva:</h4>
+          <br>
+          Pode realizar um ataque com uma arma diferente para cada 50 de DES, limitado pelo numéro máximo de maestrias.
+          <br>
+          <br>
+          <h4>Ativa:</h4>
+          <br>
+          Infusão de sangue é uma melhoria para sua arma, com o custo de 10% da sua vida máxima, você cobre uma arma com seu sangue e seleciona um alvo, quanto mais específico mais forte, esse efeito não pode ser removido, mas reseta ao início de cada mesa. Quando utilizado você ganha os seguintes efeitos que podem ser stackados:<br>
+          <br>Raça: +5% da vida do alvo fixo como dano.
+          <br>Classe: +5% da vida do alvo fixo como dano, vantagem em dados de acerto.
+          <br>Nome: Vantagem no dado de dano, causa ferida ebânea por 8 turnos.
+          <br>Fraqueza: +5% da vida do alvo como dano fixo, todos os ataques são críticos.
+</div>
+<br>
+<br>
+<!--runas-->
+<div>
+          <h2>Runas</h2>
+          <br>
+          <img class="runaimg" src="imagens/Rune_slots.webp"/>
+          <br>
+          <h4>1: <select id="rune" name="rune">
+            <option value="none">Nenhuma</option>
+            <option value="accuracy">accuracy </option>
+            <option value="blade">Blade </option>
+            <option value="despair">Despair </option>
+            <option value="destroy">Destroy</option>
+            <option value="determination">Determination </option>
+            <option value="enchance">Enchance</option>
+            <option value="endure">Endure </option>
+            <option value="energy">Energy </option>
+            <option value="fatal">Fatal</option>
+            <option value="fight">Fight</option>
+            <option value="focus">Focus</option>
+            <option value="guard">Guard</option>
+            <option value="nemesis">Nemesis</option>
+            <option value="Rage">Rage </option>
+            <option value="revenge">Revenge </option>
+            <option value="shield">Shield </option>
+            <option value="swift">Swift</option>
+            <option value="tolerance">Tolerance</option>
+            <option value="violent">Violent </option>
+            <option value="will">Will </option>
+          </select> | <select id="at" name="at"><option value="none">Nenhuma</option>
+            <option value="dmg1">DMG'A</option><option value="dmg1c">DMG'A%</option>
+            <option value="dmg2">DMG'H</option>
+            <option value="dmg2c">DMG'H%</option>
+            <option value="dmg3">DMG'T</option>
+            <option value="dmg3c">DMG'T%</option>
+            <option value="hp">HP</option>
+            <option value="hpc">HP%</option>
+            <option value="mp">MP</option>
+            <option value="mpc">MP%</option>
+            <option value="sort">Sort</option>
+            <option value="sortc">Sort%</option>
+        </select> + <input class="run" type="text" name="run1" id="run1" value="" /></h4>
+        <h4>2: <select id="rune" name="rune">
+            <option value="none">Nenhuma</option>
+            <option value="accuracy">accuracy</option>
+            <option value="blade">Blade</option>
+            <option value="despair">Despair</option>
+            <option value="destroy">Destroy</option>
+            <option value="determination">Determi nation</option>
+            <option value="enchance">Enchance</option>
+            <option value="endure">Endure</option>
+            <option value="energy">Energy</option>
+            <option value="fatal">Fatal</option>
+            <option value="fight">Fight</option>
+            <option value="focus">Focus</option>
+            <option value="guard">Guard</option>
+            <option value="nemesis">Nemesis</option>
+            <option value="Rage">Rage</option>
+            <option value="revenge">Revenge</option>
+            <option value="shield">Shield</option>
+            <option value="swift">Swift</option>
+            <option value="tolerance">Tolerance</option>
+            <option value="violent">Violent</option>
+            <option value="will">Will</option>
+          </select> | <select id="at" name="at"><option value="none">Nenhuma</option>
+            <option value="dmg1">DMG'A</option><option value="dmg1c">DMG'A%</option>
+            <option value="dmg2">DMG'H</option>
+            <option value="dmg2c">DMG'H%</option>
+            <option value="dmg3">DMG'T</option>
+            <option value="dmg3c">DMG'T%</option>
+            <option value="hp">HP</option>
+            <option value="hpc">HP%</option>
+            <option value="mp">MP</option>
+            <option value="mpc">MP%</option>
+            <option value="sort">Sort</option>
+            <option value="sortc">Sort%</option>
+        </select> + <input class="run" type="text" name="run2" id="run2" value="" /></h4>
+        <h4>3: <select id="rune" name="rune">
+            <option value="none">Nenhuma</option>
+            <option value="accuracy">accuracy</option>
+            <option value="blade">Blade</option>
+            <option value="despair">Despair</option>
+            <option value="destroy">Destroy</option>
+            <option value="determination">Determi nation</option>
+            <option value="enchance">Enchance</option>
+            <option value="endure">Endure</option>
+            <option value="energy">Energy</option>
+            <option value="fatal">Fatal</option>
+            <option value="fight">Fight</option>
+            <option value="focus">Focus</option>
+            <option value="guard">Guard</option>
+            <option value="nemesis">Nemesis</option>
+            <option value="Rage">Rage</option>
+            <option value="revenge">Revenge</option>
+            <option value="shield">Shield</option>
+            <option value="swift">Swift</option>
+            <option value="tolerance">Tolerance</option>
+            <option value="violent">Violent</option>
+            <option value="will">Will</option>
+          </select> | <select id="at" name="at"><option value="none">Nenhuma</option>
+            <option value="dmg1">DMG'A</option><option value="dmg1c">DMG'A%</option>
+            <option value="dmg2">DMG'H</option>
+            <option value="dmg2c">DMG'H%</option>
+            <option value="dmg3">DMG'T</option>
+            <option value="dmg3c">DMG'T%</option>
+            <option value="hp">HP</option>
+            <option value="hpc">HP%</option>
+            <option value="mp">MP</option>
+            <option value="mpc">MP%</option>
+            <option value="sort">Sort</option>
+            <option value="sortc">Sort%</option>
+        </select> + <input class="run" type="text" name="run3" id="run3" value="" /></h4>
+        <h4>4: <select id="rune" name="rune">
+            <option value="none">Nenhuma</option>
+            <option value="accuracy">accuracy</option>
+            <option value="blade">Blade</option>
+            <option value="despair">Despair</option>
+            <option value="destroy">Destroy</option>
+            <option value="determination">Determi nation</option>
+            <option value="enchance">Enchance</option>
+            <option value="endure">Endure</option>
+            <option value="energy">Energy</option>
+            <option value="fatal">Fatal</option>
+            <option value="fight">Fight</option>
+            <option value="focus">Focus</option>
+            <option value="guard">Guard</option>
+            <option value="nemesis">Nemesis</option>
+            <option value="Rage">Rage</option>
+            <option value="revenge">Revenge</option>
+            <option value="shield">Shield</option>
+            <option value="swift">Swift</option>
+            <option value="tolerance">Tolerance</option>
+            <option value="violent">Violent</option>
+            <option value="will">Will</option>
+          </select> | <select id="at" name="at"><option value="none">Nenhuma</option>
+            <option value="dmg1">DMG'A</option><option value="dmg1c">DMG'A%</option>
+            <option value="dmg2">DMG'H</option>
+            <option value="dmg2c">DMG'H%</option>
+            <option value="dmg3">DMG'T</option>
+            <option value="dmg3c">DMG'T%</option>
+            <option value="hp">HP</option>
+            <option value="hpc">HP%</option>
+            <option value="mp">MP</option>
+            <option value="mpc">MP%</option>
+            <option value="sort">Sort</option>
+            <option value="sortc">Sort%</option>
+        </select> + <input class="run" type="text" name="run4" id="run4" value="" /></h4>
+        <h4>5: <select id="rune" name="rune">
+            <option value="none">Nenhuma</option>
+            <option value="accuracy">accuracy</option>
+            <option value="blade">Blade</option>
+            <option value="despair">Despair</option>
+            <option value="destroy">Destroy</option>
+            <option value="determination">Determi nation</option>
+            <option value="enchance">Enchance</option>
+            <option value="endure">Endure</option>
+            <option value="energy">Energy</option>
+            <option value="fatal">Fatal</option>
+            <option value="fight">Fight</option>
+            <option value="focus">Focus</option>
+            <option value="guard">Guard</option>
+            <option value="nemesis">Nemesis</option>
+            <option value="Rage">Rage</option>
+            <option value="revenge">Revenge</option>
+            <option value="shield">Shield</option>
+            <option value="swift">Swift</option>
+            <option value="tolerance">Tolerance</option>
+            <option value="violent">Violent</option>
+            <option value="will">Will</option>
+          </select> | <select id="at" name="at"><option value="none">Nenhuma</option>
+            <option value="dmg1">DMG'A</option><option value="dmg1c">DMG'A%</option>
+            <option value="dmg2">DMG'H</option>
+            <option value="dmg2c">DMG'H%</option>
+            <option value="dmg3">DMG'T</option>
+            <option value="dmg3c">DMG'T%</option>
+            <option value="hp">HP</option>
+            <option value="hpc">HP%</option>
+            <option value="mp">MP</option>
+            <option value="mpc">MP%</option>
+            <option value="sort">Sort</option>
+            <option value="sortc">Sort%</option>
+        </select> + <input class="run" type="text" name="run5" id="run5" value="" /></h4>
+        <h4>6: <select id="rune" name="rune">
+            <option value="none">Nenhuma</option>
+            <option value="accuracy">accuracy</option>
+            <option value="blade">Blade</option>
+            <option value="despair">Despair</option>
+            <option value="destroy">Destroy</option>
+            <option value="determination">Determi nation</option>
+            <option value="enchance">Enchance</option>
+            <option value="endure">Endure</option>
+            <option value="energy">Energy</option>
+            <option value="fatal">Fatal</option>
+            <option value="fight">Fight</option>
+            <option value="focus">Focus</option>
+            <option value="guard">Guard</option>
+            <option value="nemesis">Nemesis</option>
+            <option value="Rage">Rage</option>
+            <option value="revenge">Revenge</option>
+            <option value="shield">Shield</option>
+            <option value="swift">Swift</option>
+            <option value="tolerance">Tolerance</option>
+            <option value="violent">Violent</option>
+            <option value="will">Will</option>
+          </select> | <select id="at" name="at"><option value="none">Nenhuma</option>
+            <option value="dmg1">DMG'A</option><option value="dmg1c">DMG'A%</option>
+            <option value="dmg2">DMG'H</option>
+            <option value="dmg2c">DMG'H%</option>
+            <option value="dmg3">DMG'T</option>
+            <option value="dmg3c">DMG'T%</option>
+            <option value="hp">HP</option>
+            <option value="hpc">HP%</option>
+            <option value="mp">MP</option>
+            <option value="mpc">MP%</option>
+            <option value="sort">Sort</option>
+            <option value="sortc">Sort%</option>
+        </select> + <input class="run" type="text" name="run6" id="run6" value="" /></h4>
+       </div>
+        <div>
+            <h2 class="grid-title">Resistências</h2>
+            <div class="resList" id="resList">
+                <br>
+                <table border="1" class="res">
+                    <tr>
+                        <img src="imagens/fogo5.png" class="imgresfo">
+                          <td class="elem">Ígneo</td>
+                        <img src="imagens/agua4.png" class="imgresag">
+                        <td class="elem">Hydro</td>
+                        <img src="imagens/sagrado2.webp" class="imgressag" id="open-modal3">
+                        <td class="elem">Sagrado</td>
+                        <img src="imagens/morte11.png" class="imgresmor" id="open-modal4">
+                        <td class="elem">Morte</td>
+                    </tr>
+                    <tr>
+                        <td>-25%</td>
+                        <td>0%</td>
+                        <td>-100%</td>
+                        <td>50%</td>
+                    </tr>
+                    </table>
+                    <table>
+                    <tr>
+                        <img src="imagens/fisico.png" class="imgresfis" id="open-modal5">
+                        <td class="elem">Físico</td>
+                        <img src="imagens/veneno.png" class="imgresven" id="open-modal6">
+                        <td 
+                        class="elem">Veneno</td>
+                        <img src="imagens/eterio.png" class="imgresete" id="open-modal7">
+                        <td class="elem">Etério</td>
+                        <img src="imagens/eletrico.png" class="imgresele" id="open-modal8">
+                        <td class="elem">Elétrico</td>
+                    </tr>
+                    <tr>
+                        <td>50%</td>
+                        <td>100%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                    </tr>
+                    </table>
+                    <table>
+                    <tr>
+                        <img src="imagens/sombra.png" class="imgressom" id="open-modal9">
+                        <td class="elem">Sombra</td>
+                        <img src="imagens/luz.png" class="imgresluz" id="open-modal10">
+                        <td class="elem">Luz</td>
+                        <img src="imagens/psiquico.png" class="imgrespsi" id="open-modal11">
+                        <td class="elem">Psíquico</td>
+                        <img src="imagens/espiritual.png" class="imgresesp" id="open-modal12">
+                        <td class="elem">Espiritual</td>
+                    </tr>
+                    <tr>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>25%</td>
+                        <td>0%</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                
+                <div class="carrossel owl-carousel">
+                  <div class="conquista">
+                    <!--habilidades-->
+                      <div class="conquistaCaixa">
+                        <h2>Habilidades</h2>
+                        <br>
+                        <button onclick="leiaMais1()" id="btnLeiaMais1" class="btnLeiaMais1">Anti-diabetes</button>
+                        <span id="tresPontos1"></span><span id="mostrarMais1" class="hability"><br><br>Não sofre de efeitos coláterais vindos de alta concentração de glicose.<br>
+                        <br>
+                        Rank: D
+                        <br><br><p class="habilitysec">Passiva</p></span>
+                        <hr/>
+                        <button onclick="leiaMais2()" id="btnLeiaMais2" class="btnLeiaMais2">Haki de aprimoramento</button>
+                <span id="tresPontos2"></span><span id="mostrarMais2" class="hability"><br><br>Pode envolver qualquer coisa que encoste com uma aura invisivel que fortalece o que ou quem foi afetado.<br><br>
+                  Bônus: +10 em todas as maestrias e +10 no bloqueio.<br>
+                  Rank: C
+                <br><br><p class="habilitysec">Passiva</p></span>
+                <hr/>
+                <button onclick="leiaMais3()" id="btnLeiaMais3" class="btnLeiaMais3">Haki de observação</button>
+              <span id="tresPontos3"></span><span id="mostrarMais3" class="hability"><br><br>A habilidade de sentir auras de outros seres a sua volta, identificar e até sentir seu fluxo de energia para prever movimentos, e sentir intenções superfíciais de uma única pessoa no local.
+                <br><br>
+                Efeito: Concede +5 no bloqueio e esquiva, ademais adiciona +2 em todas as maestrias além do poder de sentir intenções (concede +10 em testes de resistência baseados em CAR de intenções enganosas).<br><br>
+                Rank: C <br><br>
+                <p class="habilitysec">Passiva</p>
+              </span>
+              <hr />
+              <button onclick="leiaMais4()" id="btnLeiaMais4" class="btnLeiaMais4">Imunidade a ilusões</button>
+            <span id="tresPontos4"></span><span id="mostrarMais4" class="hability"><br><br>Ilusões de nível médio não funcionam em sua pessoa.<br>
+              Rank: B<br><br>
+            <br><p class="habilitysec">Passiva</p></span>
+            <hr/>
+            <button onclick="leiaMais8()" id="btnLeiaMais8" class="btnLeiaMais8">Manipulçao de mana</button>
+            <span id="tresPontos8"></span><span id="mostrarMais8" class="hability"><br><br>Pode controlar a mana como bem entender, assim como transformar-la em alguns elementos.<br>
+              Rank: D<br><br>
+            <br><p class="habilitysec">Passiva</p></span>
+            <hr/>
+            <button onclick="leiaMais9()" id="btnLeiaMais9" class="btnLeiaMais9">Oni giri</button>
+            <span id="tresPontos9"></span><span id="mostrarMais9" class="hability"><br><br>É a técnica mais usada, a mais básica do Santoryuu. Posiciona-se suas espadas nas mãos e na boca e corre na direção do inimigo com uma velocidade tão alta que só o vemos quando ele já está parado depois de atingir o inimigo.<br><br>
+              Dano:130% de dano.<br>
+              Custo: 50<br>
+              Alvo: único<br>
+              Rank: D
+            <br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais10()" id="btnLeiaMais10" class="btnLeiaMais10">Enbima yonezu oni giri</button>
+            <span id="tresPontos10"></span><span id="mostrarMais10" class="hability"><br><br>É quase igual ao Oni Giri, porém nessa técnica Zoro usa mais força e gira as espadas enquanto corre contra os adversários, permitindo que atinja não só um inimigo, como vários.<br><br>
+              Dano: 230%<br>
+              Custa: 150<br>
+              Alvo: Até 3 alvos<br>
+              Rank: C <br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais11()" id="btnLeiaMais11" class="btnLeiaMais11">Tora gari</button>
+            <span id="tresPontos11"></span><span id="mostrarMais11" class="hability"><br><br>Ataque simples, porém bem poderoso, parecido com o Oni Giri, mas com um alinhamento diferente das espadas e aparentemente o ataque é focado nas espadas dos braços, capazes de derrubar dois inimigos de uma vez. O foco é derrubar.<br><br>
+              Dano: 200%<br>
+              Custa: 100<br>
+              Alvo: Até 2 alvos<br>
+              Rank: C<br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais12()" id="btnLeiaMais12" class="btnLeiaMais12">Ul-tora gari</button>
+            <span id="tresPontos12"></span><span id="mostrarMais12" class="hability"><br><br>Versão mais poderosa do Tora Gari desenvolvida por Zoro no seu treinamento com Mihawk.<br><br>
+              Dano: 400%<br>
+              Custa: 200<br>
+              Alvo: Até 4 pessoas<br>
+              Rank: B<br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais13()" id="btnLeiaMais13" class="btnLeiaMais13">Toro nagashi</button>
+            <span id="tresPontos13"></span><span id="mostrarMais13" class="hability"><br><br>Técnica que mistura ataque e defesa. Normalmente os inimigos usam, no máximo, duas espadas (uma em cada mão), por isso Zoro as bloqueia usando suas duas espadas de mão e faz um movimento de ataque usando apenas a espada da boca. O adversário, se espadachim, não tem como se defender.<br><br>
+              Efeito: Ganha +30 em maestria, se a sua maestria for maior que a do alvo, o ataque acerta automáticamente.
+              Dano: 320%<br>
+              Custa: 250<br>
+              Alvo: Único<br>
+              Rank: B<br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais14()" id="btnLeiaMais14" class="btnLeiaMais14">Tatsumaki</button>
+            <span id="tresPontos14"></span><span id="mostrarMais14" class="hability"><br><br>Gira todas as suas espadas formando um tornado com forma de dragão. Quando atinge o inimigo inflige vários cortes em todas as direções imagináveis.<br><br>
+              Dano: 500%<br>
+              Custa: 350<br>
+              Alvo: Até 3 alvos<br>
+              Rank: B<br><br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais15()" id="btnLeiaMais15" class="btnLeiaMais15">Kokujo: Tatsumaki</button>
+            <span id="tresPontos15"></span><span id="mostrarMais15" class="hability"><br><br>Versão mais poderosa do Tatsumaki, criando um tornado bem maior e atingindo mais inimigos de uma vez.<br><br>
+              Dano: 600%<br>
+              Custa: 500<br>
+              Alvo: Até 7 alvos<br>
+              Rank: A <br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais16()" id="btnLeiaMais16" class="btnLeiaMais16">Karasume giri</button>
+            <span id="tresPontos16"></span><span id="mostrarMais16" class="hability"><br><br>É um ataque aéreo onde se executa vários golpes.<br><br>
+              Dano: 140%<br>
+              Custa: 120<br>
+              Alvo: até 2 pessoas<br>
+              Rank: D<br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais17()" id="btnLeiaMais17" class="btnLeiaMais17">Daibutsu giri</button>
+            <span id="tresPontos17"></span><span id="mostrarMais17" class="hability"><br><br>Série de ataques verticais enquanto se está caindo.<br><br>
+              Dano: 350%<br>
+              Custa: 300<br>
+              Alvo: Até 4 alvos<br>
+              Rank: B<br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais18()" id="btnLeiaMais18" class="btnLeiaMais18">Santoryu ogi: sanzen senkai</button>
+            <span id="tresPontos18"></span><span id="mostrarMais18" class="hability"><br><br>Colocando suas três espadas em um ângulo (como uma estrela de três pontas) e as gira rapidamente, depois corre na direção do inimigo e o corta com esse movimento.<br><br>
+              Dano: 575%<br>
+              Custa: 400<br>
+              Alvo: Único<br>
+              Rank: A<br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais19()" id="btnLeiaMais19" class="btnLeiaMais19">Asura: ichibugin</button>
+            <span id="tresPontos19"></span><span id="mostrarMais19" class="hability"><br><br>Em forma Asura, avança sobre o alvo e lhe ataca usando todas as nove espadas ao mesmo tempo.<br><br>
+              Dano: 750%<br>
+              Custa: 700<br>
+              Alvo: Único<br>
+              Rank: S<br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais20()" id="btnLeiaMais20" class="btnLeiaMais20">Asura: makyusen</button>
+            <span id="tresPontos20"></span><span id="mostrarMais20" class="hability"><br><br>Parecido com a técnica anterior, porém a finalização é diferente, assim como a postura com que segura as espadas.<br><br>
+              Dano: 800%<br>
+              Custa: 800<br>
+              Alvo: Único<br>
+              Rank: S<br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais21()" id="btnLeiaMais21" class="btnLeiaMais21">Asura: ugui</button>
+            <span id="tresPontos21"></span><span id="mostrarMais21" class="hability"><br><br>Técnica que causa vários cortes simultâneos em ângulos diferentes.<br><br>
+              Dano: 850%<br>
+              Custa: 850<br>
+              Alvo: Único<br>
+            <br><p class="habilitysec">Ativa</p></span>
+            <hr/>
+            <button onclick="leiaMais22()" id="btnLeiaMais22" class="btnLeiaMais22">Reequip</button>
+            <span id="tresPontos22"></span><span id="mostrarMais22" class="hability"><br><br>Técnica que visa trocar de equipamento, tanto armadura quanto armas.<br><br>
+              Armadura do purgatório:<br>
+A armadura do Purgatório dá ao Maluh poder de dano necrótico, além de proteger do mesmo tipo de dano. A katana toma a forma negra, se tornando um espadão cheio de espinhos, assim como a armadura.
+Efeito:+10 no bloqueio, 100% de resistência a necrótico, +P.M como dano necrótico.<br><br>
+Armadura de Asa Negra:<br>
+O traje de estilo gótico cobre Maluh em uma armadura de placa preta e brota grandes asas de morcego de suas costas, dando-lhe a habilidade de voar por curtos períodos. A arma que Maluh usa é sobrecarregada, causando 100% de dano destrutivo, além de ser equipada com dois machados de mão com o mesmo poder da espada atual. A velocidade dele no ar e na terra aumenta.
+Efeito: +10 na esquiva e no bônus de destreza, 25% do dano causado é reduzido na mana e a outra 25% na vida ambos permantemente.
+<br><br>
+Armadura dos Mil Braços:<br> 
+Armadura que dá ao Maluh mais quatro braços mecânicos, que também copiam a espada atual, no caso suas katanas. O poder das espadas principais se torna astral, tendo o principal ataque como Dispersão de Espíritos, dispersa espíritos de todas as formas e tipos.
+Efeito: +10 no bloqueio, +P.M como dano cinético, pode realizar até 2 ataques com suas espadas em seu turno, poderes astrais não surtem efeitos em sua presença.
+<br><br>
+Armadura Planadora:
+<br>
+É uma armadura que dá a aparência de um Leopardo, ela aumenta a velocidade e a agilidade e destreza do usuário.
+Efeito: +20 na esquiva e +50% em destreza.
+<br><br>
+Armadura Ataraxia:<br>
+Além de aumentar sua habilidade com as espadas, adiciona mais oito espadas com poder cinético, controladas por telecinese. Suas katanas originais também ganham o poder cinético. Bom para lutar contra espíritos. Elas podem ser usadas para atacar de longe ou como escudo de perto.<br>
+Efeito: +10 no bloquio, +P.M como dano cinético, a cada turno pode escolher até 8 alvos extra para atacar, causando 50% de dano etério.
+<br>
+Skill: omnicut: corta um alvo em 8 direções diferentes em uma longa distância, podendo ser usado uma vez a cada 2 turnos.
+<br>
+Dano: 340% de dano etério.
+<br>
+Custo: 100 
+<br>
+Rank: B
+<br><br>
+Sea King:<br> 
+Sua Sea King Armor é um exemplo poderoso de uma armadura especializada, projetada para repelir e anular ataques baseados em magia de água. Também dá ao Maluh poderosa magia de água própria, equipando-o com duas espadas, uma feita de cristal e outra de água, que ele pode turbinar para lançar ataques de água.
+<br>
+Efeito:+50 de esquiva/bloqueio na água, 100% de resistência a ataques de água.
+<br>
+Skill:Áqua violence: cria poderosos impactos mágicos elementais de água. 
+<br>
+Dano: 250% de hydro
+<br>
+Custo: 140
+<br>
+Rank: C
+<br><br>
+Thunder Emperor:
+<br> 
+Este traje dá ao Maluh a habilidade de reduzir o dano causado pela magia luminosa e elétrica. A armadura vem equipada com a Lança do Relâmpago, que lhe dá acesso a ataques ofensivos e defensivos devastadores de raio e luz. Além de sua lança absorver o ataque do oponente e atacar de volta para o mesmo com um giro gracioso da lança.
+<br>
+Efeito:100% de resistência a ataques elétricos, 50% de resistência a luz.
+<br>
+Skill:Thunder kingdom:cria um campo elétrico a sua volta, eletrocutando tudo a sua volta na aréa média(não necessita acerto, apenas estar próximo). 
+<br>
+Dano: P.M
+<br>
+Custo: 40 por turno
+<br>
+Rank: A
+<br><br>
+Flame emperor:
+<br>
+Embutida com o poder do dragão, ela da imunidade ao fogo e funde os ataques das três katanas com fogo.
+<br>
+Efeito:100% de resistência a ataques de fogo, +P.M como dano de fogo.
+<br><br>
+Armadura de Roda do Céu: 
+<br> 
+Permite que ele convoque mais de 200 espadas e as lance usando uma variedade de feitiços, incluindo Circle Sword e Trinity Sword. A armadura cobre Maluh de prata da cabeça aos pés, efetivamente transformando-o em uma espada viva. Ele ainda vem equipado com enormes asas em forma de lâmina, dando a ela a habilidade de voar. Ela usa a telecinese e da ataques cinéticos.
+<br>
+Efeito:50% de resistência a ataques físicos, todos os seus ataques se tornam cinéticos, o bônus acaba se tornando P.M.
+<br>
+Skill:Circle Sword: faz com que espadas o circulem, dando uma certa proteção.
+<br>
+Dano: 50% de P.M / +15 de bloqueio.
+<br>
+Custo: 50 por turno
+<br>
+RanK: B
+<br><br>
+Skill: trnity sword: aumenta a potência de seus ataques, dando um efeito luminoso nas espadas quando se utiliza.
+<br>
+Dano: +P.M
+<br>
+Custo: 120 por ataque
+<br>
+Rank: S
+<br><br>
+Armadura Nakagami: 
+<br>
+
+Só pode ser usada uma vez em 10 anos. Em troca de drenar seu portador, a Armadura Nakagami dissipa completamente a magia externa. Ele também equipa o usuário com uma espada única que pode cortar qualquer coisa, até mesmo o espaço.
+<br>
+Efeito: ninguém a sua volta pode usar qualquer tipo de magia, além disso, seus ataques inutilizam a física ao seu redor, o bônus do dano da espada se torna equivalente à mana sacrificada.
+<br><br>
+Armadura de Adamantium:
+<br>
+É a armadura de Maluh que possui a melhor defesa.<br>
+Efeito: Imunidade 100% a dano físico e 50% de resistência aos elementos: Fogo, Gelo e Elétrico. Invoca dois escudos grandões.
+<br><br>
+Armadura Vampírica: 
+<br> 
+Uma armadura vermelha como sangue, elehante que vem com um par de asas negras embuídas. Além disso possui uma greatsword e uma katana ambos embuidos com sangue.
+<br>
+Efeito: -50% de resistencia à dano radiante, +50% de resistência à danos de;Morte, Sombra e espiritual.
+<br>
+Skill: Blood tendency: ao sacrificar 25% da vida máxima, ganha um aumento de 50% de ataque até o final do combate.
+<br>
+Rank: A
+<br><br>
+Skill: Blood life: ao atacar recupera 25% do dano como vida, além disso um acerto crítico recupera 100% do ataque como vida.
+<br>
+Rank: A
+<br><br>
+Skill: Blood end: ao sacrificar 90% da vida máxima causa como dano 300% da vida sacrificada como dano, o elemento do dano físico superior, podendo ser reduzido no máximo pela metade. Além disso causa gravura de sangue e extinção por 2 turnos.
+<br>
+Rank: A
+<br><br>
+Skill: Vampiric game: sempre que matar alguém com essa armadura recupera 100% da vida e ganha +10% de vida máxima permanentemente, além disso se matar com "blood end" ganha 25% da vida máxima e uma skill do alvo morto.<br>
+Rank: SS
+<br><br>
+Reequip:<br>
+Rank: SS<br><br>
+            <p class="habilitysec">Passiva</p></span>
+            <hr/>
+            <button onclick="leiaMais23()" id="btnLeiaMais6" class="btnLeiaMais23">Santoryuu</button>
+            <span id="tresPontos23"></span><span id="mostrarMais23" class="hability"><br><br>Pode somar até três bônus de espadas diferentes quando for usar alguma habilidade.<br><br>
+              Rank: S<br>
+            <br><p class="habilitysec">Passiva</p></span>
+            <hr/>
+            <button onclick="leiaMais24()" id="btnLeiaMais24" class="btnLeiaMais24">Rei da noite</button>
+            <span id="tresPontos24"></span><span id="mostrarMais24" class="hability"><br><br>Recebe os seguintes benefícios:<br>
+            <br>Intangibilidade: Seu corpo reage aos perigos físicos do mundo se tornando imune a ataques físicos, além disso seu corpo pode ultrapassar objetos e lugares, exceto aqueles que possuem complemento de mana ou outra essência que transparece o mundo físico. Com isso você acaba ganhando +20 em testes de esquiva passivamente.
+            <br>
+            <br>Mudança constante: Seu corpo pode ser alterado como bem entender podendo se transformar em qualquer coisa que queira, além disso pode mimetizar qualquer coisa que esteja ligada diretamente a sua essência, tais como magias, ou armas mágicas criadas a partir de você, não só isso como também é capaz de mudar sua voz.
+            <br>
+            <br>Umbra Corpse: Seu corpo é parte da sombra que estas no mundo, isso é toda a sombra em que entra em contato se torna uma extensão de seu corpo. Além disso é capaz de separar sua sombra e desvincula-la completamente de você, ademais pode controlar outras sombras aos quais você tenha linkado a você através dessas divisões. Tirando tudo isso, seu corpo também pode ser considerado uma massa de sombra que não se afeta pelas leis de gravidade ou vetores e muito menos podendo ser tocada, com isso você recebe +20 em testes de esquiva passivamente.
+            <br>
+            <br>Olhar de rei: Pode controlar todos os seres vivos de classe 1 para baixo, além disso pode assumir o controle da mente e do corpo de pessoas que possuem metade da sua inteligência mesmo que não se enquadrem nos quesitos a cima. Além disso seus olhos induzem as pessoas a fazerem o que você quer, sempre que quiser recebe vantagem em testes para convencer alguém.
+            <br>
+            <br>Aura controladora: Sua presença se torna forte o suficiente para comandar a natureza e o clima ao redor, seu poder pode fazer com que chuvas ocorram, neblinas apareçam, nuvens vão ou apareçam, pode até mesmo fazer nevar em lugares inapropirados. Além disso pode fazer com que flores deixem de murchar ou que floreçam mesmo que as condições para isso não existam, o contrário também pode ser feito.
+            <br>
+            <br>Controle escarláte: O poder que você exerce sobre o sangue é forte o suficiente para controlar toda a fonte de sangue que já não esteja sobre o controle de alguém ou no corpo de uma pessoa (ao menos que o sangue da pessoa seja o seu) podendo criar coisas de sangue à vontade, além disso torna-se imúne ao efeito de sangramento.
+            <br>
+            <br>Royal Walker: Essa habilidade lhe permite andar onde e como quiser, seja de ponta cabeça, no ar, sobre núvens, abaixo da água ou por cima de rios de lava (sim, é possivel se dar pézinho).
+            <br>
+            <br>Veneno letal: Seu corpo é uma arma viva, seu sangue, carne e até mesmos ossos são preojudiciais aos outros causando uma espécie de envenamento, além disso sua mordida e garras também pode infligir essa condição. Esse veneno é um elemento superior e como tal não pode ter seu dano e efeitos anulados, mas podem ser reduzidos em 50%. O veneno causa 200 +P.M de dano por turno e só pode ser neutralizado se o alvo ingerir sangue (não podendo ser o seu ou dele próprio), caso o contrário o veneno não acabará naturalmente.
+            <br>
+            <br>Mente forte: Pode mover telecinéticamente as coisas e pode se comunicar com os outros mentalmente não pode ter sua comunicação cortada, também é possível mover pessoas podendo dar vantagem ou desvantagem para uma pessoa que escolher durante o seu turno. Essa habilidade pode ter no máximo um único alvo afetado.
+            <br>
+            <br>Visão do além: Pode ver na escuridão e através de outros planos.
+            <br>
+            <br>Regeneração: Regenera membros perdidos instantâneamente, e regenera 10% da vida máxima +500 por turno.
+            <br>
+            <br>Night fall: Durante o período da noite recebe vantagem em todos os testes, recebe +200 de regeneração, causa 200 de dano adicional em todas as suas habilidades e além disso sua distância sobe em um passo.
+            <br><br>
+            Corpo de rei: Não pode ter seu corpo controlado de nenhuma forma, embora sua mente ainda possa ser controlada se esse for o caso, seu corpo não agirá até que volte ao estado normal.
+            <br><br>
+            Dead is life: Sempre que alguém morrer e você saber os sentimentos da pessoa, e injetar seu sangue sobre o corpo original do morto, a pessoa retornará a vida por 5 turnos. Essa habilidade pode ser usada quantas vezes quiser em quantas pessoas quiser. Além disso pode controlar completamente aqueles que foram ressucitados. 
+            <br><p class="habilitysec">Passiva</p></span>
+            <hr/>
+            
+                      </div>
+                  </div>
+        </div>
+        
+            </div>
+          </div>
+
+        
+        </div>
+      </div>
+      <div class="character">
+        <div class="characterHeader">  
+        </div>
+
+        <div class="bars">
+          <h4>Vida</h4>
+          <div class="bar">
+            <div class="lifeBar" style="width: 0%">
+              <p class="barcount" id="lifeCount"></p>
+            </div>
+          </div>
+
+          <h4>Mana</h4>
+          <div class="sanity">
+            <div class="contentSanityBar">
+              <div class="sanityBar" style="width: 0%">
+                <p class="barcount" id="sanityCount"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+<br>
+      <div class="attributes border">
+        <h2 class="grid-title">ATRIBUTOS</h2>
+        <hr />
+
+        <div class="attributesList" id="attributesList"></div>
+      </div>
+      <br>
+      
+      <br>
+      <br>
+      <div class="expertise border">
+        <br>
+        <h2>C.A</h2>
+        <hr />
+        <br>
+        <table border="1" class="ca">
+            <tr>
+                <img src="imagens/esquiva.png" class="imgresqui">
+                <td class="caat">Esquiva: 85</td>
+                <img src="imagens/bloqueio.png" class="imgbloq">
+                <td class="caat">Bloqueio: 85</td>
+            </tr>
+            <tr>
+                <td>Bônus extra: 0</td>
+                <td>Armadura Extra: 0</td>
+            </tr>
+            </table>
+            <br>
+            <br>
+            <br>
+            <h2>Velocidade</h2>
+            <hr >
+            <br>
+            <table border="1" class="speed">
+              <tr>
+                  <img src="imagens/corrida.png" class="imgspeed">
+                  <td class="verozidade">Velocidade: 195</td>
+                  <img src="imagens/Zona" class="imgzona">
+                  <td class="verozidade">Zona: médio</td>
+              </tr>
+              </table>
+      </div>
+      <br>
+      <br>
+      <div class="expertise border">
+        <br>
+        <h2>Maestria</h2>
+        <hr />
+        <br>
+        <table class="maesp">
+          <tr>
+              <img src="imagens/machado.png" class="imgmaesal">
+              <td class="maes">Arma longa</td>
+              <img src="imagens/faca.png" class="imgmaesac">
+              <td 
+              class="maes">Arma curta</td>
+              <img src="imagens/soco.png" class="imgmaesfis">
+              <td class="maes">Físico</td>
+          </tr>
+          <tr>
+              <td>81</td>
+              <td>91(491)</td>
+              <td>81</td>
+          </tr>
+          </table>
+          <br>
+          <table class="maesp">
+          <tr>
+              <img src="imagens/pistole.png" class="imgmaesaf">
+              <td class="maes">Arma de fogo</td>
+              <img src="imagens/arco.png" class="imgmaesaa">
+              <td class="maes">Arma arcaica</td>
+              <img src="imagens/lança.png" class="imgmaeslan">
+              <td class="maes">Lança</td>
+          </tr>
+          <tr>
+              <td>81</td>
+              <td>81</td>
+              <td>81</td>
+          </tr>
+      </table>
+      <br>
+      <table class="maesp">
+        <tr>
+            <img src="imagens/cana.png" class="imgmaesaf">
+            <td class="maes">Canalizador</td>
+            <img src="imagens/gadanha1.png" class="imgmaesaa">
+            <td class="maes">Gadanhas</td>
+            <img src="imagens/pecu.png" class="imgmaeslan">
+            <td class="maes">Peculiaridade</td>
+        </tr>
+        <tr>
+            <td>81</td>
+            <td>81</td>
+            <td>81</td>
+        </tr>
+    </table>
+      </div>
+      <br>
+      <div class="border">
+        <div class="combatHeader">
+          <h2 class="grid-title">Bençãos</h2>
+        </div>
+        <hr />
+        <br>
+        <button onclick="leiaMais1a()" id="btnLeiaMais1a" class="btnLeiaMais">Doce pesadelo</button>
+                  <span id="tresPontos1a"></span><span id="mostrarMais1a" class="bens"><br><br>Sua afinidade e ligação com a Kurumi é algo forte, tão forte que voce saberia decifrar todas as suas ações e pensamentos, voce sabe exatamente o que ela faria. Sempre que voce se perguntar o que ela fária, irei lhe responder como uma forma de ajuda.<br>
+                  <br></span>
+                  <hr/>
+                  <button onclick="leiaMais2a()" id="btnLeiaMais2a" class="btnLeiaMais">A mente de um maluco</button>
+                  <span id="tresPontos2a"></span><span id="mostrarMais2a" class="bens"><br><br>Sua mente é genialmente funcional, seus movimentos e ações não podem ser previstas. Recebe +10 em esquiva e +10 em acerto vezes o número de sua classe.<br>
+                  <br></span>
+                  <hr/>
+        <div class="carrossel owl-carousel">
+          <div class="conquista">
+              <div class="conquistaCaixa">
+              </div>
+              
+          </div>
+</div>
+        <br>
+      </div>
+    </div>
+
+    <div class="modal-overlay active">
+            <div class="modal">
+                <h2>MODIFICAR VIDA</h2>
+                <hr>
+                <form id="changeLife">
+                    <span class="modalspan">Atual</span>
+                    <input class="modalinput" type="number" name="current" id="lifeCurrent" min="0">
+
+                    <span class="modalspan">Máximo</span>
+                    <input class="modalinput" type="number" name="max" id="lifeMax" min="0">
+                    <input class="modalbutton" type="submit" value="Salvar">
+                </form>
+            </div>
+        </div>
+
+        <div class="fab"  ontouchstart="">
+          <button class="main" onclick="openModal('dv-modal1')" >
+          </button>
+        </div>
+
+        <div id="dv-modal1" class="modal">
+          <div class="modal-content-inv">
+            <div class="modal-header">
+            <img src="fechar.png" class="close" id="close-modal" onclick="closeModall('dv-modal1')">
+            <h1>Inventario</h1>
+            </div>
+            <div class="modal-body">
+                <div class="modal-armas">
+                  <br>
+                  <h1 class="stitulo-armas">Armas</h1>
+                  <br>
+                  <h2 class="titulo-armas">Wado ichimonji {espada}:</h2>
+                  <hr/>
+                  <p class="armas-info">Uma espada japonesa que aparenta ser normal, possuí seu cabo ea bainha de coloração branca.
+                    <br>
+                    Dano: +170 de dano sempre que for usada.</p>
+                  <br>
+                  <h2 class="titulo-armas">Yoto benisakura {espada}:</h2>
+                  <hr/>
+                  <p class="armas-info">Uma espécide de katana com o cabo e a bainha em detalhes negros e possuí uma espécie de enfeite vermelho na ponta de seu cabo.
+                    <br>
+                    Dano: +80 de dano verdadeiro sempre que for usada.
+                  <br>
+                  Skill: Pode sacrificar sua C.A para aumentar o dano da espada (para cada 10 pontos de esquiva e bloqueio sacrificados ganha +20 no dano).</p>
+                  <br>
+                  <h2 class="titulo-armas">Odachi de aço negro (Mardori) {espada}:</h2>
+                  <hr/>
+                  <p class="armas-info">Uma espada em estilo japonesa de tamanho alongado, possuí uma lâmina negra.
+                    <br>
+                    Dano: +60 de dano quando usada.</p>
+                  <br>
+                  <h2 class="titulo-armas">Moguragiri {peculiaridade}:</h2>
+                  <hr/>
+                  <p class="armas-info">Uma espécie de bastão com três lâmina na ponta, sendo uma delas (a do meio) semelhante a uma lâmina.
+                    <br>
+                    Dano: O dano é decidido pelo mestre, sendo esse avaliando a cena.</p>
+                  <br>
+                  <h2 class="titulo-armas">Hell blade (Enma) {espada}</h2>
+                  <hr/>
+                  <p class="armas-info">Uma espada amaldiçoada com detalhes de coloração roxa, dizem que ela é capaz de partir ilhas.
+                    <br>
+                    Dano: +180 de maestria.
+                    <br>
+                    Efeito: A lâmina alamdiçoada corta até aquilo que não pode ser visto, podendo cortar através de outros planos. A lâmina também é capaz de corta o poder de uma bruxa normalmente, ademais seus cortes causam mais que um simples sangramento. Todo ataque realizado com ela causa 3 Stacks de "Ferida ebânea" e quando acertar um golpe crítico causa o efeito "gravura de sangue". Este efeito só pode ser ativado nas mãos do Mahlu Cour.
+                  </p>
+                  <br>
+                  <h2 class="titulo-armas"></h2>
+                  <hr/>
+                  <p class="armas-info"></p>
+                </div>
+                <br><br>
+                <div class="outros">
+                  <h1 class="stitulo-armas">outros</h1>
+                  <br><br>
+                  <h2 class="titulo-armas">Colar de crítico / 01x</h2>
+                  <hr/>
+                  <p class="armas-info">Um colar criado por um casal que descobriu gemas características que concedem efeitos especiais. Esse colar possuí um aumento de na taxa de crítico, a cor de sua gema é laranja, você tem 20% à mais na taxa crítica.</p>
+                  <br>
+                  <h2 class="titulo-armas">Colar de combo / 01x</h2>
+                  <hr/>
+                  <p class="armas-info">Um colar criado por um casal que descobriu gemas características que concedem efeitos especiais. Esse colar possuí uma chance de fazer você atacar de novo, a cor de sua gema é cíana, sempre que atacar deve-se rolar 1d100, se tirar a cima de 80 você pode realizar mais um ataque, mas não pode usar habilidades nesse outro ataque.</p>
+                  <br>
+                  <h2 class="titulo-armas">Rosa do crepúsculo / 01x</h2>
+                  <hr/>
+                  <p class="armas-info">Uma flor que transmite uma sensação serena, ela causa bons sentimentos, sua cor é branca e seu interior vermelho, quando exposta à noite ela se abre e muda de cor dependo do estado da lua, em noites normais sua cor é branca, em eclipses sua cor se torna negra e em noites de lua sangrenta sua cor fica avermelhada. Essa flor tem a natureza da liberdade e transmite essa natureza àqueles que estão ao seu redor, concedendo o efeito de que nada pode ser tirado de dentro do seu corpo. valendo para sentimentos, mana, orgaos, informação, tudo é negado desde que não tenha permissão.</p>
+                  <br>
+                  <h2 class="titulo-armas">Frasco gelado / 01x</h2>
+                  <hr/>
+                  <p class="armas-info">Um frasco que contém a alma da Seras dentro. O poder da alma da Seras é forte o suficiente para "abençoar" alguém, dando imunidade aos status de congelado, seja ele o congelamento temporal ou só o status de congelado normal.</p>
+                  <br>
+                  <h2 class="titulo-armas">Phantom blood / 01x</h2>
+                  <hr/>
+                  <p class="armas-info">Seu sangue possuí micro-fragmentos do phantom ruby dando-lhe uma certa imunidade ao phantom ruby, exceto se o mesmo for o verdadeiro.</p>
+                  <br>
+                  <h2 class="titulo-armas">Nenhum / 0x</h2>
+                  <hr/>
+                  <p class="items"></p>
+                  <br>
+                  <h2 class="titulo-armas">Nenhum / 0x</h2>
+                  <hr/>
+                  <p class="items"></p>
+                  <br>
+                  <h2 class="titulo-armas">Nenhum / 0x</h2>
+                  <hr/>
+                  <p class="items"></p>
+                  <br>
+                  <h2 class="titulo-armas">Nenhum / 0x</h2>
+                  <hr/>
+                  <p class="items"></p>
+                  <br>
+                  <h2 class="titulo-armas">Nenhum / 0x</h2>
+                  <hr/>
+                  <p class="items"></p>
+                  <br>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn-inv" onclick="closeModall('dv-modal1')">Fechar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="fab"  ontouchstart="">
+      <button class="main2" onclick="openModal('dv-modal2')" >
+      </button>
+    </div>
+    <div id="dv-modal2" class="modal">
+      <div class="modal-content-inv">
+        <div class="modal-header">
+          <img src="fechar.png" class="close" id="close-modal" onclick="closeModall('dv-modal2')">
+        </div>
+            <div class="modal-body">
+                <div class="modal-armas">
+                  <br>
+                  <h1 class="stitulo-armas">Banco de Skills</h1>
+                  <br>
+                  <button onclick="leiaMais1b()" id="btnLeiaMais1b" class="btnLeiaMais1b">Nightmare Wolfs</button>
+        <span id="tresPontos1b"></span><span id="mostrarMais1b" class="hability"><br><br>De sua sombra emergem lobos distrorcidos por sombras, possuindo diversos olhos e uma forma amedrontadora.<br><br>
+          Dano: 100% para lobos pequenos / 300% para lobos grandes<br>
+          Custa: 100 para lobos pequenos / 200 para lobos grandes<br>
+          Efeito: pode ter até 5 lobos pequenos, ou 2 lobos grandes<br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais2b()" id="btnLeiaMais2b" class="btnLeiaMais2b">Negative explosion</button>
+        <span id="tresPontos2b"></span><span id="mostrarMais2b" class="hability"><br><br> Dispara um tiro de energia negativa altamente destrutiva que no impacto explode causando destruição em diferentes planos e dimensões diferentes.<br><br>
+          Dano: 500% + 1000% do P.M<br>
+          Custa: 1500<br>
+          Efeito: Cancela outros tipos de magias ativas e armadilhas.<br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais3b()" id="btnLeiaMais3b" class="btnLeiaMais3b">Freeze</button>
+        <span id="tresPontos3b"></span><span id="mostrarMais3b" class="hability"><br><br> Faz uma onda congelante que congela tudo ao seu redor, o alvo deve ser bem-sucedido no teste de constituição ou será congelado.<br><br>
+          Dano: 50%<br>
+          Custo: 50 <br>
+          Efeito: Congela à todos no campo de batalha, a C.D é 100% do P.M + 50% da constituição.<br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais4b()" id="btnLeiaMais4b" class="btnLeiaMais4b">Armadilha congelante</button>
+        <span id="tresPontos4b"></span><span id="mostrarMais4b" class="hability"><br><br> Dispara estacas ou outros objetos feitos de gelo, que ao contato ou apenas chegar perto, explode, congelando a área em volta.<br><br>
+          Dano: 100% de P.M + 50% de INT<br>
+          Custo: 50<br>
+          Efeito: No ínicio do turno inimigo, ele deve realizar um teste de Constituição CD (100% do P.M + 50% da constituição).<br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais5b()" id="btnLeiaMais5b" class="btnLeiaMais5b">Blackout</button>
+        <span id="tresPontos5b"></span><span id="mostrarMais5b" class="hability"><br><br> Expande a sua sombra, e cria um campo feito completamente de sombras, faz com que todos os seus adversários tenham dados seus postos em desvantagem.<br><br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais6b()" id="btnLeiaMais6b" class="btnLeiaMais6b">Inferno congelante</button>
+        <span id="tresPontos6b"></span><span id="mostrarMais6b" class="hability"><br><br> Se “blackout” estiver ativo, ela congela e prende todos que ali estão e em seguida espinhos de gelos atacarão lá dentro, e como final do combo, atira uma estaca de sombras junto ao gelo em seus alvos.<br><br>
+          Efeito: Combo 10x (Arremessa estacas que contam para o contador de combo equivalente à 10, deve-se rolar número de dados igual esse valor também).
+          Dano: 20% vezes número de acertos + 150% de P.M. como dano Hydro<br>
+          Custo: 250<br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais7b()" id="btnLeiaMais7b" class="btnLeiaMais7b">Inverno eterno</button>
+        <span id="tresPontos7b"></span><span id="mostrarMais7b" class="hability"><br><br> Traz a tona o zero absoluto, congelando tudo incluindo o tempo.<br><br>
+          Efeito: Todos devem realizar um teste de CON com C.D igual à P.M + 50% de INT do úsuario, em caso de falha fica "congelado" por 2 turnos, em caso de sucesso fica com "Lentidão" por 2 turnos.<br>
+          Custo: 500<br>
+          <br><p class="habilitysec">ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais8b()" id="btnLeiaMais8b" class="btnLeiaMais8b">Bala</button>
+        <span id="tresPontos8b"></span><span id="mostrarMais8b" class="hability"><br><br> Uma esfera de energia fraca, porém rápida, pode ser lançada duas vezes em um turno.<br><br>
+          Dano: 75% de dano cinético.<br>
+          Custo: 100<br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais9b()" id="btnLeiaMais9b" class="btnLeiaMais9b">Cero</button>
+        <span id="tresPontos9b"></span><span id="mostrarMais9b" class="hability"><br><br> Dispara um feixe de energia semelhante a um laser apartir de seu corpo.<br><br>
+          Dano: 200% de dano cinético.<br>
+          Custo: 150<br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais10b()" id="btnLeiaMais10b" class="btnLeiaMais10b">Cero oblivion</button>
+        <span id="tresPontos10b"></span><span id="mostrarMais10b" class="hability"><br><br> Cria uma esfera de cero que se funde com sua arma, potencializando seus ataques.<br><br>
+          Efeito: 50% de P.M como dano cinético à mais em ataques com sua arma por 2 turnos.<br>
+          Custo: 50<br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais11b()" id="btnLeiaMais11b" class="btnLeiaMais11b">Controle magnético</button>
+        <span id="tresPontos11b"></span><span id="mostrarMais11b" class="hability"><br><br> Pode mover, distorcer e sistematizar metais livremente.<br><br>
+        <br>
+                    <br><p class="habilitysec">Passiva</p></span>
+                    <hr/>
+                    <button onclick="leiaMais12b()" id="btnLeiaMais12b" class="btnLeiaMais12b">Cero ascendente</button>
+        <span id="tresPontos12b"></span><span id="mostrarMais12b" class="hability"><br><br> Cria um enorme canhão metalico energizado com sua mana, e dispara um enorme cero.<br><br>
+          Dano: 50% da mana sacrificada como dano cinético.<br>
+          Custo: mana sacrificada<br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais13b()" id="btnLeiaMais13b" class="btnLeiaMais13b">Assopro divino</button>
+        <span id="tresPontos13b"></span><span id="mostrarMais13b" class="hability"><br><br> Faz um assopro forte o suficiente para criar um furacão.<br><br>
+          Efeito: Empurra o inimigo aumentando a distância necessária para lhe atacar.<br>
+          Dano: 200% de dano físico. <br>
+          Custo: 300<br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais14b()" id="btnLeiaMais14b" class="btnLeiaMais14b">Ventos de furacão</button>
+        <span id="tresPontos14b"></span><span id="mostrarMais14b" class="hability"><br><br> Realiza um soco com uma potência devastadora capaz de criar um grande furacão com a sua pressão.<br><br>
+          Efeito: Empurra o inimigo aumentando a distância necessária para lhe atacar.<br>
+          Dano: 350% de dano físico. <br>
+          Custo: 500<br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais15b()" id="btnLeiaMais15b" class="btnLeiaMais15b">Aurora boreal</button>
+        <span id="tresPontos15b"></span><span id="mostrarMais15b" class="hability"><br><br> Manipula os átomos do ar invocando todo o frio para formar uma grande Aurora em suas costas, em seguida dispara um raio de frio em seu alvo através de suas mãos.<br><br>
+          Efeito: O alvo deve realizar um teste de CON com C.D igual à P.M + 50% de INT do úsuario, em caso de falha fica "congelado"" por 1 turnos, em caso de sucesso ficará com "Lentidão" por um turno.<br>
+          Dano: 650% de dano hydro. <br>
+          Custo: 1000<br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais16b()" id="btnLeiaMais16b" class="btnLeiaMais16b">Foice da possessão</button>
+        <span id="tresPontos16b"></span><span id="mostrarMais16b" class="hability"><br><br> Suas mãos ficam em torno de uma aura negra em formato de foices e com um grande olho, que toma posse de tudo aquilo inanimado que toca que toca.<br><br>
+          Efeito: O alvo acertado perde o controle do membro acertado.<br>
+          Dano: 150% de dano físico. <br>
+          Custo: 300<br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais17b()" id="btnLeiaMais17b" class="btnLeiaMais17b">Cero simbiótico</button>
+        <span id="tresPontos17b"></span><span id="mostrarMais17b" class="hability"><br><br> Dispara um cero com uns detalhes negros.<br><br>
+          Efeito: O alvo acertado perde o controle do membro acertado.<br>
+          Dano: 200% de dano físico. <br>
+          Custo: 400<br>
+        <br>
+                    <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais18b()" id="btnLeiaMais18b" class="btnLeiaMais18b">Controle simbiótico</button>
+        <span id="tresPontos18b"></span><span id="mostrarMais18b" class="hability"><br><br> Quando ele pega a posse do corpo ele também passa parte de sua simbiose, podendo modificar seu cropo<br><br>
+          Efeito: Concede modificações físicas no alvo.<br>
+        <br>
+                    <br><p class="habilitysec">Passiva</p></span>
+                    <hr/>
+                    <button onclick="leiaMais19b()" id="btnLeiaMais19b" class="btnLeiaMais19b">Presa do pesadelo</button>
+        <span id="tresPontos19b"></span><span id="mostrarMais19b" class="hability"><br><br> Ao escolher um alvo em específico começa a atacar em todas as direções e deixando um rastro negro grudento, semelhante a uma teia de aranha.<br><br>
+          Efeito: Combo 10x (conta para o contador de combo equivalente à 10, deve-se rolar número de dados igual esse valor também), para cada dado crítico causa 50% de P.M como dano adicional, para cada acerto o alvo deve realizar um teste de FOR com C.D igual a DES + 50% de P.M.<br>
+          Dano: 30% de dano físico por acerto. <br>
+          Custo: 300<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais20b()" id="btnLeiaMais20b" class="btnLeiaMais20b">Amor</button>
+        <span id="tresPontos20b"></span><span id="mostrarMais20b" class="hability"><br><br> Ao olhar para um objeto torna-o seu, deixando uma marca de sol no objeto possuído e um dos seus olhos torna-se roxo. A quantidade de objetos controlados é limitado e equivalente a um objeto por olho. Se Alvejando um membro do corpo do alvo, ele desliga os nervos do cérebro inimigo de controle sobre o membro, e agora o membro passa a ser controlado por você. Ainda que a habilidade seja por olhar, ainda deve-se rolar um acerto, a habilidade é semelhante ao amaterasu.<br><br>
+          Custo: 100<br>
+        <br>
+        <br><p class="habilitysec">Passiva</p></span>
+                    <hr/>
+                    <button onclick="leiaMais21b()" id="btnLeiaMais21b" class="btnLeiaMais21b">Gran rey cero</button>
+        <span id="tresPontos21b"></span><span id="mostrarMais21b" class="hability"><br><br> Um cero melhorado de coloração azul, é necessário o próprio sangue para realizá-lo.<br><br>
+          Dano: 350% de P.M como dano cinético.<br>
+          Custo: 250<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais22b()" id="btnLeiaMais22b" class="btnLeiaMais22b">Liberação de Vento: Palma Vendaval</button>
+        <span id="tresPontos22b"></span><span id="mostrarMais22b" class="hability"><br><br> Uma técnica de Liberação de Vento que permite ao usuário aumentar a velocidade de algum projétil ou pessoa lançada, ou criar um forte impacto para atacar inimigos.<br><br>
+          Dano: 50% de P.M como dano físico.<br>
+          Custo: 50<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais23b()" id="btnLeiaMais23b" class="btnLeiaMais23b">Fissão de mandibula</button>
+        <span id="tresPontos23b"></span><span id="mostrarMais23b" class="hability"><br><br> Prende o alvo no ""chibaku tensei" e em seguida faz um movimento com as duas mãos semelhantes a dentes mordendo com o desgarron.<br><br>
+          Dano: 1000% de P.M como dano físico ou cinético.<br>
+          Custo: 850<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais24b()" id="btnLeiaMais24b" class="btnLeiaMais24b">Rinnegan</button>
+        <span id="tresPontos24b"></span><span id="mostrarMais24b" class="hability"><br><br> Um dojutsu ancestral que lhe concede inúmeras habilidades baseadas nos seis caminhos.<br><br>
+          Caminho Asura:<br>
+          Pode criar e usar armas e armaduras mecânizadas do seu corpo, se tornando uma máquina.<br>
+        <br>
+        Caminho Preta:<br>
+          Cria uma aura de absorção na qual pode absorver mana em qualquer um dos seus estados.<br>
+        <br>
+        Caminho Humano:<br>
+          Concede a habilidade de ler a mente de alvos ao colocar a mão em cima de sua cabeça ou peito, podendo também arrancar sua alma do corpo.<br>
+        <br>
+        Caminho Naraka:<br>
+          Concede duas habilidades principais: Interrogatório e restauração.<br>
+          <strong>Interrogatório:</strong><br>
+          Efeito: Com o alvo com sua alma exposta(fora do corpo) e o rei do inferno invocado, se alguma mentira da parte do alvo for contada, o mesmo terá sua alma devorada pelo rei do inferno.
+        <br><br>
+        <strong>Restauração:</strong><br>
+        Efeito: Com o custo de 1% de sua vida máxima e 5% da sua mana máxima, traz qualquer um com uma alma inteira de volta a vida sem quaisquer outras penalidades.<br><br>
+        Caminho Animal:<br>
+        Passa a poder invocar qualquer animal da lista abaixo:<br>
+        Yatagarasu, Quimera Gigante, Camaleão Gigante, Panda Gigante, Touro Gigante, Rinoceronte Gigante, Crustáceo Gigante, Centopeia Gigante.<br><br>
+        Caminho Deva:<br>
+        Passa a ter habilidades com base em controle gravitacional e possuindo as seguintes habilidades:<br>
+        <strong>Banshō Ten'in: </strong><br>
+        Efeito: Puxa o alvo para sua frente, a habilidade tem um alcance grande.<br>
+        Dano: 20% de P.M como dano cinético.<br>
+        Custo: 50<br><br>
+        <strong>Chibaku Tensei: Selo:</strong><br>
+        Efeito: Puxa tudo e todos para o centro de uma esfera negra, selando todos aqueles presos, para se esquivar deve realizar um teste de CON com C.D igual à P.M +50% de INT, em caso de falha o alvo fica selado, até a destruição do poder ou uma vez por turno pode realizar um novo teste.<br>
+        Dano: 400% de P.M como dano físico.<br>
+        Custo: 500.<br><br>
+        <strong>Chibaku tensei: Ataque:</strong><br>
+        Efeito: Após o chibaku tensei ser formado você pode joga-lo em seu oponente.<br>
+        Dano: 850% de P.M como dano físico.<br>
+        Custo: 300.<br><br>
+        <strong>Shinra tensei:</strong><br>
+        Efeito: Empurra tudo a sua volta, pode ser usado tanto para defesa, quanto para ataque, dependendo da área que quer cobrir, de todo modo distância o alvo em uma categoria de zona.<br>
+        Dano: 200% de P.M como dano físico para cada zona que for o tamanho da habilidade.<br>
+        Custo: 300 para cada zona que cobrir, +1 turno de cooldown.<br>
+        <br><p class="habilitysec">Passiva</p></span>
+                    <hr/>
+                    <button onclick="leiaMais25b()" id="btnLeiaMais25b" class="btnLeiaMais25b">Garra de la pantera</button>
+        <span id="tresPontos25b"></span><span id="mostrarMais25b" class="hability"><br><br> Arremessa espinhos altamente destrutivos.<br><br>
+          Dano: 300% de P.M como dano espiritual.<br>
+          Custo: 200<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais26b()" id="btnLeiaMais26b" class="btnLeiaMais26b">Desgarron</button>
+        <span id="tresPontos26b"></span><span id="mostrarMais26b" class="hability"><br><br> Cria vários formatos de garras que dispara em seus oponentes.<br><br>
+          Dano: 500% de P.M como dano cinético.<br>
+          Custo: 350<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais27b()" id="btnLeiaMais27b" class="btnLeiaMais27b">Bomba negativa</button>
+        <span id="tresPontos27b"></span><span id="mostrarMais27b" class="hability"><br><br> Dispara uma esfera de energia feita de energia negativa similiar a uma pequena bijuu dama.<br><br>
+          Dano: 150% de P.M como dano verdadeiro.<br>
+          Custo: 100<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais28b()" id="btnLeiaMais28b" class="btnLeiaMais28b">Garras das trevas</button>
+        <span id="tresPontos28b"></span><span id="mostrarMais28b" class="hability"><br><br> Essa habilidade consiste em um ataque carregado que faz uma garra espectral enorme para atacar o oponente. <br><br>
+          Dano: 200% de P.M como dano verdadeiro.<br>
+          Custo: 150<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais29b()" id="btnLeiaMais29b" class="btnLeiaMais29b">Olhar do vazio</button>
+        <span id="tresPontos29b"></span><span id="mostrarMais29b" class="hability"><br><br> Olhando para todos os seus oponentes você acaba lhe mostrando a parte do abismo que reside em você. <br><br>
+          Efeito: causa desvantagem em todos os dados inimigos pelos proximos 2 turnos, o alvo deve rolar CAR para resistir, a C.D é equivalente a P.M + CAR.<br>
+          Custo: 5 turnos de cooldown.<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais30b()" id="btnLeiaMais30b" class="btnLeiaMais30b">Phantom arise</button>
+        <span id="tresPontos30b"></span><span id="mostrarMais30b" class="hability"><br><br> Expandindo sua sombra cria um foço de almas enorme sob seus oponentes, devem rolar um teste de INT (C.D igual a P.M + 50% de CAR) ou serão possuidos por um espirito e tomarão dano igual ao seu próprio poder magico, 10% desse dano é retirado de sua vida máxima. <br><br>
+          Custo: 300<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais31b()" id="btnLeiaMais31b" class="btnLeiaMais31b">Supa netherius bomb</button>
+        <span id="tresPontos31b"></span><span id="mostrarMais31b" class="hability"><br><br> Carrega uma esfera grande e maciça de energia negatvia, por fim disparando-a. <br><br>
+          Efeito: O alvo deve rolar um teste de INT (C.D igual a P.M + 50% de CAR) ou ficará com a condição de "inibição" por 2 turnos. <br>
+          Dano: 400% + P.M como dano verdadeiro.<br>
+          Custo: 350<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais32b()" id="btnLeiaMais32b" class="btnLeiaMais32b">Netherius phantom flame</button>
+        <span id="tresPontos32b"></span><span id="mostrarMais32b" class="hability"><br><br> Realiza uma baforada fantasmagórica embutido com seus sentimentos finais, causando tipos de danos e efeitos diferentes, mesmo se errar o alvo sofre 10% de sua vida maxima de dano.<br><br>
+           Dano: 400% + P.M + 10% da vida máxima do alvo.<br>
+           Custo: 350<br>
+           Efeito: Causa um efeito diferente para cada elemento selecionado.<br>
+           
+           <Strong>Fogo:</Strong>o dano agora se torna ígneo, e o alvo fica burn até 10 minutos depois da batalha, o dano de burn durante a luta é 5% da vida máxima por turno e após a luta é 1% da vida máxima por minuto.<br><br>
+
+           <strong>Gelo:</strong> o dano se torna hydro, o alvo recebe redução de 50 em esquiva e bloqueio e seu bonus de destreza é reduzido pela metade por 2 turnos.<br><br>
+           
+           <strong>Necrotico:</strong> seu fogo agora causa dano de morte, causa metade do dano ao alvo, mas o dano é inteiramente na sua vida máxima.<br><br>
+           
+           <strong>Sagrado:</strong> seu dano agora se torna sagrado, seu ataque agora cura voce com o dobro de dano causado.<br><br>
+           
+           <strong>Físico:</strong> seu fogo acaba fazendo uma grande pressão no corpo de seu adversário, o alvo deve ser bem sucedido no teste de constituição ou ficará stunado por 2 turnos.<br><br>
+           
+           <strong>Veneno:</strong> seu dano agora se torna venenoso, sendo um veneno fantasma, ignora resistencias, o alvo envenenado toma 1 de dano por hora, não pode mais recuperar vida, a não ser por magias, e dano permanece até acharem uma cura.<br><br>
+           
+           <strong>Elétrico:</strong> seu dano agora se torna elétrico, retarda o corpo do usuario, da desvantagem em seus dados por 5 turnos, o alvo deve realizar um teste de constituição, caso falhe ficará paralizado por 1 turno.<br><br>
+           
+           <strong>Cinético:</strong> seu dano é envolvido por nether, o alvo tem seu poder magico reduzido em 1d50% e perde a capacidade de usar qulaquer habilidade de fuga, seja para outro plano ou tp, também bloqueia regen de mana, tudo por 1d5 turnos.
+            <br><br>
+          
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+                    <hr/>
+                    <button onclick="leiaMais33b()" id="btnLeiaMais33b" class="btnLeiaMais33b">Vendaval de garras</button>
+        <span id="tresPontos33b"></span><span id="mostrarMais33b" class="hability"><br><br> Perfura uma superfície próxima e emito minha aura criando um portal no chão e próximo ao alvo e posso bater muitas vezes e, assim, desencadear vários golpes através do portal. Posso criar até 4 portais. <br><br>
+          Dano: 100% da maestria como dano físico por portal.<br>
+          Custo: 100 por portal.<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais34b()" id="btnLeiaMais34b" class="btnLeiaMais34b">Agouro infernal</button>
+        <span id="tresPontos34b"></span><span id="mostrarMais34b" class="hability"><br><br> Cria até quatro massas de energia amaldiçoada flamejante para atacar separadamente à distância ou todos juntos para um ataque mais poderoso reduzindo o alcance. <br><br>
+          Dano: 50% de P.M como dano ígneo por esfera | 250% de P.M como dano ígneo.<br>
+          Custo: 20 por esfera | 150.<br>
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais35b()" id="btnLeiaMais35b" class="btnLeiaMais35b">Sorte reversa</button>
+        <span id="tresPontos35b"></span><span id="mostrarMais35b" class="hability"><br><br> Quando ativada transforma dados ruins em bons.<br><br>
+          Custo: 700<br>
+        <br>
+        <br><p class="habilitysec">ativa/Passiva</p></span>
+        <hr/>
+        <button onclick="leiaMais36b()" id="btnLeiaMais36b" class="btnLeiaMais36b">Fukuma Mizushi</button>
+        <span id="tresPontos36b"></span><span id="mostrarMais36b" class="hability"><br><br> O ambiente da Expansão de Domínio assume a forma de um santuário budista que foi desfigurado. O santuário tem chifres no telhado, crânios pendurados em cada um dos cantos do telhado, bocas saindo de cada lado dele e é cercado por crânios em forma de touro.<br><br>
+          Dano: 50% de P.M por turno como dano verdadeiro.<br>
+          Custo: 300 de ativação + 50 por turno.<br> 
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais37b()" id="btnLeiaMais37b" class="btnLeiaMais37b">Estaca ocular</button>
+        <span id="tresPontos37b"></span><span id="mostrarMais37b" class="hability"><br><br> Cria uma estaca a partir dos olhos.<br><br>
+          Dano: 150% como dano astral.<br>
+          Custo: 80<br> 
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais38b()" id="btnLeiaMais38b" class="btnLeiaMais38b">Laser</button>
+        <span id="tresPontos38b"></span><span id="mostrarMais38b" class="hability"><br><br> Dispara laser dos dedos ou dos olhos.<br><br>
+          Dano: 100% como dano astral.<br>
+          Custo: 40<br> 
+        <br>
+        <br><p class="habilitysec">ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais39b()" id="btnLeiaMais39b" class="btnLeiaMais39b">Spectres noctis insomnes</button>
+        <span id="tresPontos39b"></span><span id="mostrarMais39b" class="hability"><br><br>Garras surgem e puxam as entidades que estiverem em seu caminho para mim.<br>
+          Custo: 25.<br>
+          Dano: 150%<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+            </div>
+            <button onclick="leiaMais40b()" id="btnLeiaMais40b" class="btnLeiaMais40b">Volo spectris</button>
+        <span id="tresPontos40b"></span><span id="mostrarMais40b" class="hability"><br><br>Pode disparar a até 10 metros intangível, e ao atravessar entidades torna os outros amaldiçoados.<br>
+          Custo: 25.<br>
+          Efeito: 50% de chance de causar “Amaldiçoado”, faço elas terem desvantagens em tudo por 2 turnos.<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais41b()" id="btnLeiaMais41b" class="btnLeiaMais41b">Crepúsculo</button>
+        <span id="tresPontos41b"></span><span id="mostrarMais41b" class="hability"><br><br>Ao matar um ser no crepúsculo, adiciono seus bônus aos meus durante 10 turnos, e dependendo da camada, meus atributos se aprimoram, exemplo:<br>
+          <strong>Camada 1:</strong> Meus atributos somam +10% de seus valores originais.<br>
+          <strong>Camada 2:</strong> Meus atributos somam +20% de seus valores originais, e os dos oponentes subtraem -10%.<br>
+          <strong>Camada 3:</strong> Meus atributos somam +30% de seus valores originais.<br>
+          <strong>Camada 4:</strong> Meus atributos somam +40% de seus valores originais.<br>
+          <strong>Camada 5:</strong> Meus atributos somam +50% de seus valores originais, e os dos oponentes subtraem -20%.<br>
+          <strong>Camada 6:</strong> Meus atributos somam +60% de seus valores originais.<br>
+          <strong>Camada 7:</strong> Meus atributos somam +70% de seus valores originais.<br>
+          <strong>Camada 8:</strong> Meus atributos somam +80% de seus valores originais.<br>
+          <strong>Camada 9:</strong> Meus atributos somam +90% de seus valores originais.<br>
+          <strong>Camada 10:</strong> Meus atributos somam +100% de seus valores originais, e os dos oponentes subtraem -25%.<br>
+          <br>
+        <br><p class="habilitysec">ativa/Passiva</p></span>
+        <hr/>
+        <button onclick="leiaMais42b()" id="btnLeiaMais42b" class="btnLeiaMais42b">Armadura espectral</button>
+        <span id="tresPontos42b"></span><span id="mostrarMais42b" class="hability"><br><br>Quando recebe dano, no ínicio de seu turno pode ativar a armadura espectral que aumenta 5% da  vida máxima como “Armadura Espectral”.<br>
+          <br><p class="habilitysec">Passiva</p></span>
+          <hr/>
+          <button onclick="leiaMais43b()" id="btnLeiaMais43b" class="btnLeiaMais43b">Quoth e Roäc</button>
+        <span id="tresPontos43b"></span><span id="mostrarMais43b" class="hability"><br><br>Pode convocar 2 corvos para ver, sentir, ouvir e falar por voce.<br>
+          <br><p class="habilitysec">Passiva</p></span>
+          <hr/>
+          <button onclick="leiaMais44b()" id="btnLeiaMais44b" class="btnLeiaMais44b">Golpe de misericórdia</button>
+        <span id="tresPontos44b"></span><span id="mostrarMais44b" class="hability"><br><br>Sempre que o alvo tiver 10% da vida máxima como vida restante, seu próximo dano matará o alvo instantâneamente.
+          <br><br><p class="habilitysec">Passiva</p></span>
+          <hr/>
+          <button onclick="leiaMais45b()" id="btnLeiaMais45b" class="btnLeiaMais45b">Hirodora</button>
+        <span id="tresPontos45b"></span><span id="mostrarMais45b" class="hability"><br><br> Dispara um tigre de energia que explode ao contato.<br>
+          Dano: 150% de FOR como dano físico +200% de FOR como dano cinético.<br>
+          Custo: 10% da vida máxima na vida atual.<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais46b()" id="btnLeiaMais46b" class="btnLeiaMais46b">Luz de la luna</button>
+        <span id="tresPontos46b"></span><span id="mostrarMais46b" class="hability"><br><br> Cria uma lança verde que serve com arma.<br>
+          Dano: + 50% de P.M em maestria se for usado como arma | 500% de dano como dano cinético.<br>
+          Custo: 800<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais47b()" id="btnLeiaMais47b" class="btnLeiaMais47b">Lanza del relampago</button>
+        <span id="tresPontos47b"></span><span id="mostrarMais47b" class="hability"><br><br> Cria uma lança verde que pode ser arremessada e possui uma imensa força causando grande explosão no impacto. <br>
+          Dano: +P.M em maestria se for usada como arma | 1200% de dano como dano cinético.<br>
+          Custo: 1.500.<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais48b()" id="btnLeiaMais48b" class="btnLeiaMais48b">Magia negra do caos</button>
+        <span id="tresPontos48b"></span><span id="mostrarMais48b" class="hability"><br><br> Faz um efeito de quebra da realidade de forma que o espaço se comporta de meios indeterminados. <br>
+          Dano: 400% de INT como dano verdadeiro.<br>
+          Custo: 350<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais49b()" id="btnLeiaMais49b" class="btnLeiaMais49b">Chaos zone</button>
+        <span id="tresPontos49b"></span><span id="mostrarMais49b" class="hability"><br><br> Reescreve toda a realidade, criando uma fenda de caos que acaba se expandindo e cobrindo o campo inteiro. <br>
+          Efeito: Qualquer coisa pode acontecer nesse espaço, todos SEM exceções devem rolar um dado de sorte por turno.<br>
+          Custo: 1.000<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais50b()" id="btnLeiaMais50b" class="btnLeiaMais50b">Magia negra</button>
+        <span id="tresPontos50b"></span><span id="mostrarMais50b" class="hability"><br><br> Fragiliza a realidade e causando um efeito semelhante a uma quebra em todos no local. <br>
+          Dano: 250% como dano verdadeiro.<br>
+          Custo: 200<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais51b()" id="btnLeiaMais51b" class="btnLeiaMais51b">Onda de fusão</button>
+        <span id="tresPontos51b"></span><span id="mostrarMais51b" class="hability"><br><br> Cria uma onda de energia que por onde se espalha acaba fundindo coisas aleatóriamente. <br>
+          Efeito: Todos devem rolar um dado de sorte, em caso de falha crítica uma morte ocorre instantâneamente.<br>
+          Custo: 700<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais52b()" id="btnLeiaMais52b" class="btnLeiaMais52b">Estilo fogo: jutsu da chama obscura: </button>
+        <span id="tresPontos52b"></span><span id="mostrarMais52b" class="hability"><br><br> Da ponta de seu dedo são disparadas inúmeras chamas negras.  <br>
+          Dano: 300% de P.M como dano ígneo.<br>
+          Custo: 200<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais53b()" id="btnLeiaMais53b" class="btnLeiaMais53b">Cero oscuras</button>
+        <span id="tresPontos53b"></span><span id="mostrarMais53b" class="hability"><br><br> Dispara da ponta de seu dedo um raio de energia negro com uma aura avermelhada.<br>
+          Dano: 600% de P.M como dano cinético.<br>
+          Custo: 500<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais54b()" id="btnLeiaMais54b" class="btnLeiaMais54b">Blade cero</button>
+        <span id="tresPontos54b"></span><span id="mostrarMais54b" class="hability"><br><br> Dispara um corte na vertical com a energia do cero.<br>
+          Dano: 250% de P.M como dano cinético.<br>
+          Custo: 200<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais55b()" id="btnLeiaMais55b" class="btnLeiaMais55b">Estilo fogo: Jutsu bola de fogo</button>
+        <span id="tresPontos55b"></span><span id="mostrarMais55b" class="hability"><br><br> Cospe uma bola de fogo.<br>
+          Dano: 150% do P.M como dano ígneo.<br>
+          Custo: 100<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais56b()" id="btnLeiaMais56b" class="btnLeiaMais56b">Chama do desespero</button>
+        <span id="tresPontos56b"></span><span id="mostrarMais56b" class="hability"><br><br> Um raio de chamas negras surge abaixo do oponente fazendo surgir um pilar de chamas.<br>
+          Dano: 500% de P.M como dano ígneo.
+          Efeito: O alvo deve rolar um teste de CON (C.D igual a P.M + 50% de INT), em caso de falha fica queimando por 7 e 7 noites, recebendo 5% da vida máxima como dano.
+          Custo: 700<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais57b()" id="btnLeiaMais57b" class="btnLeiaMais57b">Amaterasu</button>
+        <span id="tresPontos57b"></span><span id="mostrarMais57b" class="hability"><br><br> Faz chamas negras surgirem no seu campode visão.<br>
+          Dano: 50% de P.M como dano ígneo.
+          Efeito: O alvo deve rolar um teste de CON (C.D igual a P.M + 50% de INT), em caso de falha fica queimando por 7 e 7 noites, recebendo 5% da vida máxima como dano.
+          Custo: 120<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais58b()" id="btnLeiaMais58b" class="btnLeiaMais58b">Tsukuyomi</button>
+        <span id="tresPontos58b"></span><span id="mostrarMais58b" class="hability"><br><br> Prende o alvo em uma ilusão na qual o alvo fica sendo morto por mais de 1.000 anos.<br>
+          Dano: 400% de P.M como dano psíquico.
+          Efeito: O alvo deve rolar um teste de CON (C.D igual a P.M + 50% de INT), em caso de falha fica stunado por 1 turno e recebe um stack de medo.
+          Custo: 400<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais59b()" id="btnLeiaMais59b" class="btnLeiaMais59b">susanoo</button>
+        <span id="tresPontos59b"></span><span id="mostrarMais59b" class="hability"><br><br> Invoca uma aura de samurai que lhe protege. <br>
+          Susanoo: Costela<br>
+          Efeito: +25% do P.M em bloqueio e dano.<br>
+          Custo: 50 por turno <br><br>
+          Susanoo: esqueleto completo<br>
+          Efeito: +50% do P.M em bloqueio e dano.<br>
+          Custo: 100 por turno <br><br>
+          Susanoo: Armadurado<br>
+          Efeito: +75% do P.M em bloqueio e dano, além disso todo ataque mágico é refletido.<br>
+          Custo: 150 por turno <br><br>
+          Susanoo: completo<br>
+          Efeito: P.M em bloqueio e dano, além disso todo ataque mágico é refletido.<br>
+          Custo: 200 por turno <br><br>
+          Susanoo: perfeito<br>
+          Efeito: + 150% do P.M em bloqueio e dano, além disso todo ataque mágico é refletido.<br>
+          Custo: 300 por turno <br><br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais60b()" id="btnLeiaMais60b" class="btnLeiaMais60b">Ola azul</button>
+        <span id="tresPontos60b"></span><span id="mostrarMais60b" class="hability"><br><br> Dispara uma esfera de água misturada com o gran rey cero.<br>
+          Dano: 350% do P.M como dano hydro.
+          Custo: 300<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais61b()" id="btnLeiaMais61b" class="btnLeiaMais61b">Cascada</button>
+        <span id="tresPontos61b"></span><span id="mostrarMais61b" class="hability"><br><br> Faz surgir uma enorme torrente de água sobre seus inimigos.<br>
+          Dano: 450% do P.M como dano hydro.
+          Custo: 400<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais62b()" id="btnLeiaMais62b" class="btnLeiaMais62b">la gota</button>
+        <span id="tresPontos62b"></span><span id="mostrarMais62b" class="hability"><br><br> Envolve sua espada com água e dispara uma torrente de água junto com seu gran rey cero.<br>
+          Dano: 800% do P.M como dano hydro.
+          Custo: 700<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais63b()" id="btnLeiaMais63b" class="btnLeiaMais63b">Cero definitivo</button>
+        <span id="tresPontos63b"></span><span id="mostrarMais63b" class="hability"><br><br> Utilizando 6 pontos de origem, dispara um cero definitivo.<br>
+          Dano: 500% do P.M como dano cinético.
+          Custo: 450<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais64b()" id="btnLeiaMais64b" class="btnLeiaMais64b">Avada kedavra</button>
+        <span id="tresPontos64b"></span><span id="mostrarMais64b" class="hability"><br><br> Com uma varinha em mãos, lança um raio verde que causa a morte em qualquer ser vivo desprotegido.<br>
+          Efeito: se o alvo possuir controle sobre a mana, um teste de INT deverá ser rolado além do acerto (C.D igual a P.M), em caso de falha recebe todo o dano, em caso de sucesso receberá 10% da vida máxima do usuário como dano cinético.
+          Dano: 60% da vida máxima do alvo + 40% da sua vida máxima como dano cinético.
+          Custo: 1.800<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais65b()" id="btnLeiaMais65b" class="btnLeiaMais65b">Gigantic omegastorm</button>
+        <span id="tresPontos65b"></span><span id="mostrarMais65b" class="hability"><br><br> Carregando uma esfera verde entre suas mãos à sua frente, você dispara apartir dela um enorme feixe de energia.
+          Custo: 600<br>
+          Dano: 800% do P.M como dano cinético.<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais66b()" id="btnLeiaMais66b" class="btnLeiaMais66b">Gigantic cluster</button>
+        <span id="tresPontos66b"></span><span id="mostrarMais66b" class="hability"><br><br> Carregando uma esfera de energia à sua frente, arremessa inúmeras esferas de energia vindas dessa original.
+          Custo: 500.<br>
+          Dano: 600% do P.M como dano cinético.<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais67b()" id="btnLeiaMais67b" class="btnLeiaMais67b">Planet crsusher</button>
+        <span id="tresPontos67b"></span><span id="mostrarMais67b" class="hability"><br><br> Colocando suas mãos aos altos, forma uma grande esfera de energia que logo em seguida arremessa causando uma enorme explosão.
+          Custo: 1.000.<br>
+          Dano: 1.200% do P.M como dano cinético.<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais68b()" id="btnLeiaMais68b" class="btnLeiaMais68b">Omega blaster</button>
+        <span id="tresPontos68b"></span><span id="mostrarMais68b" class="hability"><br><br> Carrega uma pequena esfera de energia em sua mão e arremessa-a para explodi-la cobrindo uma grande área.
+          Custo: 1.700.<br>
+          Dano: 1.800% do P.M como dano cinético.<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais69b()" id="btnLeiaMais69b" class="btnLeiaMais69b">Vetorização: cobra</button>
+        <span id="tresPontos69b"></span><span id="mostrarMais69b" class="hability"><br><br> Pode criar e controlar setas que se mexem como cobras.<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais70b()" id="btnLeiaMais70b" class="btnLeiaMais70b">Vetorização: mimetização</button>
+        <span id="tresPontos70b"></span><span id="mostrarMais70b" class="hability"><br><br> Pode transformar o próprio corpo em multiplas cobras.<br>
+        <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais71b()" id="btnLeiaMais71b" class="btnLeiaMais71b">Vetorização: sentido</button>
+        <span id="tresPontos71b"></span><span id="mostrarMais71b" class="hability"><br><br> Pode criar e posicionar vetores que dependendo do sentido ajudam ou atrapalham aqueles afetados.<br>
+        A favor: +25 no acerto.<br>
+        Contra: O alvo deve se rolar CON o FOR(CD igual à P.M + INT), se falhar o ataque é negado, se passar recebe -20 no acerto.<br>
+        Custo: 300<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais72b()" id="btnLeiaMais72b" class="btnLeiaMais72b">Vetorização: espada</button>
+        <span id="tresPontos72b"></span><span id="mostrarMais72b" class="hability"><br><br> Pode criar uma espada feita de vetores que empurra tudo que toca.<br>
+        Dano: +60 em Maestria quando usada.<br>
+        Contra: O alvo deve se rolar CON o FOR(CD igual à P.M + INT), se falhar o ataque é arremessado uma zona.<br>
+        Custo: 300<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais73b()" id="btnLeiaMais73b" class="btnLeiaMais73b">Vetorização: Expulsão de sentidos</button>
+        <span id="tresPontos73b"></span><span id="mostrarMais73b" class="hability"><br><br> Cria um domo de vetores que expulsam sensores como mana, reiatsu, ki... lhe tornando completamente imperceptivel.<br>
+        Custo: 50<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais74b()" id="btnLeiaMais74b" class="btnLeiaMais74b">Vetorização: Escudo</button>
+        <span id="tresPontos74b"></span><span id="mostrarMais74b" class="hability"><br><br> Cria vários vetores em torno de sí que giram em um sentido, anulando ataquesl.<br>
+          Efeito: O alvo deve se rolar CON o FOR(CD igual à P.M + INT), se falhar o ataque é negado, se passar recebe -20 no acerto.<br>
+          Custo: 1.100<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais75b()" id="btnLeiaMais75b" class="btnLeiaMais75b">Vetorização: Comprimir</button>
+        <span id="tresPontos75b"></span><span id="mostrarMais75b" class="hability"><br><br> Cria vários vetores em torno de um alvo pressionando-o.<br>
+          Dano: 900% do P.M como dano cinético<br>
+          Efeito: O alvo deve rolar CON (CD: P.M + INT), em caso de falha o alvo sofre 50% da vida máxima como dano extra.<br>
+          Custo: 1.100<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais76b()" id="btnLeiaMais76b" class="btnLeiaMais76b">Vetorização: correntes</button>
+        <span id="tresPontos76b"></span><span id="mostrarMais76b" class="hability"><br><br> Cria vetores semelhante a cobras que se prendem e pressionam o alvo, essas cobras podem explodir.<br>
+          Dano de explosão: 400% do P.M como dano cinético.<br>
+          Efeito: O alvo deve rolar CON (CD: P.M + INT), em caso de falha o alvo ficará imobilizado por 1 turno.<br>
+          Custo: 800<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais77b()" id="btnLeiaMais77b" class="btnLeiaMais77b">Vetorização: divisão</button>
+        <span id="tresPontos77b"></span><span id="mostrarMais77b" class="hability"><br><br> Cria vetores no interior do inimigo fazendo com que o mesmo imploda.<br>
+          Dano de explosão: Morte (resistencia física nega).<br>
+          Efeito: O alvo deve rolar CON (CD: P.M + INT), em caso de falha o alvo morre.<br>
+          Custo: 2.000<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais78b()" id="btnLeiaMais78b" class="btnLeiaMais78b">Cura espiritual</button>
+        <span id="tresPontos78b"></span><span id="mostrarMais78b" class="hability"><br><br> Usa ondas espirituais para curar um próximo.<br>
+          Cura: 300% do P.M + 50% de INT.<br>
+          Custo: 100<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais79b()" id="btnLeiaMais79b" class="btnLeiaMais79b">Toque paralisante</button>
+        <span id="tresPontos79b"></span><span id="mostrarMais79b" class="hability"><br><br> Usa ondas espirituais para paralisar um próximo.<br>
+          Efeito: O alvo deve passar em um teste de P.M, em caso de falha o alvo ficará paralisado por 1 turno.<br>
+          Custo: 100<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais80b()" id="btnLeiaMais80b" class="btnLeiaMais80b">Onda de choque</button>
+        <span id="tresPontos80b"></span><span id="mostrarMais80b" class="hability"><br><br> Usa ondas espirituais para emporrar um próximo.<br>
+          Dano: 100% do P.M.<br>
+          Custo: 60<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais81b()" id="btnLeiaMais81b" class="btnLeiaMais81b">Shotgun</button>
+        <span id="tresPontos81b"></span><span id="mostrarMais81b" class="hability"><br><br> Usa ondas espirituais em volta dos punhos e a dispara contra o oponente do momento do impacto.<br>
+          Dano: 400% do P.M como dano espiritual.<br>
+          Custo: 350<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais82b()" id="btnLeiaMais82b" class="btnLeiaMais82b">Barreira espiritual</button>
+        <span id="tresPontos82b"></span><span id="mostrarMais82b" class="hability"><br><br> Forma um escudo de energia espiritual.<br>
+          Proteção: 25% da vida máxima (dano cinético nega).<br>
+          Custo: 200<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais83b()" id="btnLeiaMais83b" class="btnLeiaMais83b">Leigan</button>
+        <span id="tresPontos83b"></span><span id="mostrarMais83b" class="hability"><br><br> Ao formar uma arma com os dedos, dispara uma poderosa energia da ponta de seu dedo indicador.<br>
+          Dano: 250% do P.M como dano espiritual.<br>
+          Custo: 200<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        <button onclick="leiaMais84b()" id="btnLeiaMais84b" class="btnLeiaMais84b">Reflexo destrutivo leitor</button>
+        <span id="tresPontos84b"></span><span id="mostrarMais84b" class="hability"><br><br> Ao tocar o inimigo enquanto o mesmo o ataca rouba uma quantidade de mana igual a 1d100 + P.M e causa dano equivalente a essa mana roubada.<br>
+          Efeito: Você deve ser bem-sucedido em um teste de esquiva e possuir uma diferença igual a 50% da sua destreza.<br>
+          <br><p class="habilitysec">Ativa</p></span>
+        <hr/>
+        
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="fichamandy.js"></script>
+  </body>
+</html>
